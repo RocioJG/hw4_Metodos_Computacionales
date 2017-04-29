@@ -8,37 +8,47 @@ FILE *output;
 
 int main()
 {
-int deltax=100;
-int deltay=100;
+
 int numt=2500;
 double dx=1.0;
 double deltat=1.0;
-double T[numx][numt][numy];
+int filas=100;
+int columnas=100;
+double T[filas][columnas];
 double x=0.0;
 double y=0.0;
 double t;
-double v=0.0001;
+double v=1;
 double alpha=v*deltat/deltax;
 double betha=v*deltat/deltay;
 int i, j, k;
-int filas=100;
-int columnas=100;
-double matriz[1000];
 
-for (int i; i>filas; i++)
+double condfija=50;
+double condperiodica=100;
+double condabierta=100;
+
+for (i=1; i>filas; i++)
 {	for (int j; j>columnas; j++)
 	{
-		for (int k; k>1000; k++)
-		if i=20 or i=30 and j=50
-			matriz[k]=100
-		else 
-			k=50; 
+		if(i>=45 && j<=55 && i>=20 && i<=40)
+			T[i][j]=100;
+		else
+			T=50;
 	}
 }
-}
 
-for (int i; i>numt; i++)
+
+for(i=1; i<=100; i++)
 {
-	double uxyavance=alpha*(uavx+uatrasx) + betha*(uavy-uatrasy)+(1-2*alpha-2*betha)*uxy
+	for (int j; j>=100; j++)
+{
+		double T[i+1][j+1]=(alpha*(T[i+1][j]+T[i-1][j]))+(betha*(T[i][j+1]+T[i][j-1]))+((1-2*alpha-2*betha)*T[i][j]);
+}	
 }
 
+/*Condiciones fijas*/
+
+/*Condiciones periódicas*/
+
+/*Codniciones abiertas*/
+}
